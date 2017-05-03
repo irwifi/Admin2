@@ -2,8 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', (req, res, next) => {
+  admin_dashboard(null, {req, res, next});
 });
+
+const admin_dashboard = (err, params) => {
+  const params_out = {
+    title: "Admin",
+    widgets: ["text", "calendar", "map"]
+  };
+
+  params.res.render('index', params_out);
+}
 
 module.exports = router;
