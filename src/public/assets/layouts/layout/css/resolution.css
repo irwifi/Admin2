@@ -414,6 +414,7 @@
     margin-bottom: 15px !important; }
   .page-sidebar-fixed .page-sidebar-menu .sub-menu {
     height: auto !important; }
+
   /* Sidebar Closed */
   .page-sidebar-closed .page-sidebar {
     width: 45px !important; }
@@ -691,6 +692,10 @@
       display: none; }
     .page-boxed .page-header.navbar .top-menu .navbar-nav > li.dropdown-language .dropdown-toggle .langname {
       display: none; }
+
+  .page-sidebar-closed .page-sidebar-wrapper.sidebar-right .page-sidebar .page-sidebar-menu > li.nav-item {
+    display: block;
+  }
 }
 
 

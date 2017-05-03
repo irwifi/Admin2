@@ -1280,6 +1280,7 @@
 .top-menu li {
   margin: 1px 2px;
   padding: 12px 10px;
+  cursor: pointer;
 }
 
 .top-menu li:hover {
@@ -1303,4 +1304,18 @@
 
 .page-sidebar-menu {
   color: #b4bcc8;
+}
+
+.page-sidebar-wrapper .page-sidebar .page-sidebar-menu > li.user-view {
+  padding: 6px;
+}
+
+.page-sidebar-wrapper .user-view .title {
+    margin-left: 8px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+.page-sidebar-closed .page-sidebar .page-sidebar-menu > li.user-view {
+  display: none;
 }
