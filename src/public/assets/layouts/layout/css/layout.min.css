@@ -853,7 +853,69 @@
     transition: all 2s; }
 
 
+/* Header >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+  .page-header.navbar.navbar-fixed-top {
+    height: inherit;
+    padding-bottom: 5px;
+  }
 
+  .page-header-inner {
+    color: #c6cfda;
+  }
+
+  .page-sidebar-closed .logo-text {
+    display: none;
+  }
+
+  .top-left {
+    width: 235px;
+  }
+
+  .top-center .sidebar-search-wrapper1 {
+    margin-top: 7px;
+    margin-left: 20px;
+  }
+
+  .sidebar-search-wrapper1 .fa-gear {
+    margin-left: -12px;
+    cursor: pointer;
+  }
+
+  .page-header.navbar .top-center .top-menu  {
+    margin-top: 3px;
+    padding-right: 0;
+  }
+
+  .page-header.navbar .top-menu .navbar-nav {
+    margin-right: 10px;
+    /*background: #2b3643;*/
+  }
+
+  .top-menu li {
+    margin: 1px 2px;
+    padding: 12px 10px;
+    cursor: pointer;
+  }
+
+  .top-menu li:hover {
+    background: #3f4f62;
+  }
+
+  .top-right {
+   width: 235px; float: right;
+   margin-top: 8px;
+  }
+
+  .top-right .history {
+    margin-left: 15px;
+    margin-right: 61px;
+  }
+
+  .page-content-white .top-right .theme-panel {
+    right: 10px;
+    margin-top: -42px;
+  }
+/* Header ----------------------------------------*/
 
 /* Left Sidebar >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
   .page-sidebar.navbar-collapse,
@@ -1551,62 +1613,3 @@
       color: #b4bcc8;
   }
 /* Right Sidebar ----------------------------------------*/
-
-/* Header >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-  .page-header-inner {
-    color: #c6cfda;
-  }
-
-  .page-sidebar-closed .logo-text {
-    display: none;
-  }
-
-  .top-left {
-    width: 235px;
-  }
-
-  .top-center .sidebar-search-wrapper1 {
-    margin-top: 7px;
-    margin-left: 20px;
-  }
-
-  .sidebar-search-wrapper1 .fa-gear {
-    margin-left: -12px;
-    cursor: pointer;
-  }
-
-  .page-header.navbar .top-center .top-menu  {
-    margin-top: 3px;
-    padding-right: 0;
-  }
-
-  .page-header.navbar .top-menu .navbar-nav {
-    margin-right: 10px;
-    background: #2b3643;
-  }
-
-  .top-menu li {
-    margin: 1px 2px;
-    padding: 12px 10px;
-    cursor: pointer;
-  }
-
-  .top-menu li:hover {
-    background: #3f4f62;
-  }
-
-  .top-right {
-   width: 235px; float: right;
-   margin-top: 8px;
-  }
-
-  .top-right .history {
-    margin-left: 15px;
-    margin-right: 61px;
-  }
-
-  .page-content-white .top-right .theme-panel {
-    right: 10px;
-    margin-top: -42px;
-  }
-/* Header ----------------------------------------*/
