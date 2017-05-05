@@ -1295,6 +1295,14 @@
     color: #b4bcc8;
   }
 
+  .page-sidebar-wrapper .info .sub-menu li {
+    display: none;
+  }
+
+  .page-sidebar-wrapper .info .sortable li a {
+    cursor: move;
+  }
+
   .page-sidebar-wrapper .info .right {
     float: right;
     margin-right: 2px;
@@ -1306,6 +1314,27 @@
 
   .page-sidebar-wrapper .info .tooltips {
     text-decoration: underline;
+  }
+
+  .page-sidebar-wrapper .info .fa-cog {
+    cursor: pointer;
+    margin-left: 4px;
+    position: fixed;
+    bottom: 50px;
+  }
+
+  .page-sidebar-wrapper .info-modal ul {
+    list-style: none;
+  }
+
+  .page-sidebar-wrapper .page-sidebar .page-sidebar-menu > li.xray-view {
+    position: fixed;
+    bottom: 0;
+    width: 235px;
+    padding: 10px 20px;
+    height: 40px;
+    background: #2b3643;
+    text-align: center;
   }
 /* Left Sidebar ----------------------------------------*/
 
@@ -1613,3 +1642,7 @@
       color: #b4bcc8;
   }
 /* Right Sidebar ----------------------------------------*/
+
+.page-footer {
+  margin-left: 220px;
+}

@@ -31,43 +31,43 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu sortable">
-                    <li class="nav-item">
+                    <li class="nav-item" data-config="first_name">
                         <a class="nav-link ">
                             <span class="title">First name:</span>
                             <span class="right">John</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="last_name">
                         <a class="nav-link ">
                             <span class="title">Last Name:</span>
                             <span class="right">Doe</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="credit_ranking">
                         <a class="nav-link ">
                             <span class="title">Credit Ranking:</span>
                             <span class="right">10</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="budget_billing">
                         <a class="nav-link ">
                             <span class="title">Budget Billing:</span>
                             <span class="right tooltips" data-original-title="$38.00">Yes</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="pap">
                         <a class="nav-link ">
                             <span class="title">PAP:</span>
                             <span class="right tooltips" data-original-title="$38.00">Yes</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="paperless">
                         <a class="nav-link ">
                             <span class="title">Paperless:</span>
                             <span class="right">jdoe@mail.net</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="service">
                         <a class="nav-link ">
                             <span class="title">Service:</span>
                             <span class="right tooltips" data-original-title="Meter #123">WTR</span>
@@ -75,43 +75,161 @@
                             <span class="right tooltips" data-original-title="Meter @ABC">PWR</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="outage_notif">
                         <a class="nav-link ">
                             <span class="title">Outage Notif:</span>
                             <span class="right">No</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="account">
                         <a class="nav-link ">
                             <span class="title">Account(s):</span>
                             <span class="right">A1234Z</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="last_invoice">
                         <a class="nav-link ">
                             <span class="title">Last Invoice:</span>
                             <span class="right">9/11/17</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="last_payment">
                         <a class="nav-link ">
                             <span class="title">Last Payment:</span>
                             <span class="right">9/12/17</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="bill_cycle">
                         <a class="nav-link ">
                             <span class="title">Bill Cycle:</span>
                             <span class="right">7</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item" data-config="next_cycle">
                         <a class="nav-link ">
                             <span class="title">Next Cycle:</span>
                             <span class="right">9/18/17</span>
                         </a>
                     </li>
+                    <li class="nav-item" data-config="meter_type">
+                        <a class="nav-link ">
+                            <span class="title">Meter Type:</span>
+                            <span class="right">AMI</span>
+                        </a>
+                    </li>
                 </ul>
+
+                <div data-toggle="modal" href=".info-modal"> <i class="fa fa-cog"></i> </div>
+
+                <div class="modal fade draggable-modal ui-draggable info-modal" id="draggable" tabindex="-1" role="basic" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header ui-draggable-handle">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Info Selector</h4>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="account"> Account(s)
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="bill_cycle"> Bill Cycle
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="budget_billing"> Budget Billing
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="credit_ranking"> Credit Ranking
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="first_name"> First Name
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="last_invoice"> Last Invoice
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="last_payment"> Last Payment
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="last_name"> Last Name
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="meter_type"> Meter Type
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="next_cycle"> Next Cycle
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="outage_notif"> Outage Notif
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="pap"> PAP
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="paperless"> Paperless
+                              <span></span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="mt-checkbox">
+                              <input type="checkbox" value="checked" name="service"> Service(s)
+                              <span></span>
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn green save_button">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+
+            <li class="xray-view">
+                <label class="mt-checkbox">
+                    <input type="checkbox" name="xray" value="checked"> X-Ray View
+                    <span></span>
+                </label>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->
