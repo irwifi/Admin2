@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
 
 const admin_dashboard = (err, params) => {
   const params_out = {
-    title: "Admin",
+    title: "Admin 2.0 Dashbard",
     widgets: ["text", "calendar", "map"]
   };
 
