@@ -1316,6 +1316,10 @@
     text-decoration: underline;
   }
 
+  .page-sidebar-wrapper .info .tooltips.blank {
+    text-decoration: none;
+  }
+
   .page-sidebar-wrapper .info .fa-cog {
     cursor: pointer;
     margin-left: 4px;

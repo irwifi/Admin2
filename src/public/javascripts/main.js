@@ -4,8 +4,10 @@ $(document).ready(function() {
 
   const config_info_pos = {"config_element": "info-pos-config",  "config_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "config_identifier": "data-config", "config_attribute": "data-pos", "element_parent": ".page-sidebar-wrapper .info .sub-menu", "element_selector": ".nav-item", "element_identifier": "data-pos"};
   const config_info_select = {"config_element": "info-select-config", "config_selector": ".page-sidebar-wrapper .info-modal .mt-checkbox input[type='checkbox']", "config_identifier": "name", "config_property": "checked", "element_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "element_identifier": "data-config", "css_property": "display"};
-  const config_array = [config_info_pos, config_info_select];
+  const config_xray = {"config_element": "xray-config",  "config_selector": ".page-sidebar-wrapper .xray-view input[type='checkbox']", "config_identifier": "name", "config_property": "checked"};
+  const config_array = [config_info_pos, config_info_select, config_xray];
   load_all_config({config_array});
+  // console.log(localStorage);
 
   $( ".sortable" ).sortable({
     update: (event, ui) => {
@@ -21,6 +23,8 @@ $(document).ready(function() {
       // config_save({"config_element": "info-pos-config", "config_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "element_identifier": "data-config", "config_attribute": "data-pos"});
     }
   });
+
+  toggle_tooltips();
 
   toastr.options = {
     "closeButton": true,
@@ -54,7 +58,31 @@ $(document).ready(function() {
   $(".page-sidebar-wrapper .info-modal").on('hide', () => {
     load_config({"config": config_info_select});
   });
+
+  $(".page-sidebar-wrapper .xray-view input[name='xray']").on("change", () => {
+    config_save({"config_element": "xray-config", "config_selector": ".page-sidebar-wrapper .xray-view input[type='checkbox']", "element_identifier": "name", "config_property": "checked"});
+    toggle_tooltips();
+  });
 })
+
+const toggle_tooltips = () => {
+  let tooltip_number;
+  if($(".page-sidebar-wrapper .xray-view input[type='checkbox'][name='xray']").is(':checked')) {
+    tooltip_number = "tooltip2";
+  } else {
+    tooltip_number = "tooltip1";
+  }
+
+  $(".page-sidebar-wrapper .info .sub-menu .nav-item .tooltips").each(function() {
+    if($(this).data(tooltip_number) == "") {
+      $(this).addClass("blank");
+    } else {
+      $(this).removeClass("blank");
+    }
+
+    $(this).attr("data-original-title", $(this).data(tooltip_number));
+  });
+}
 
 // Sort the Info elements
 const info_sorting = (params) => {
@@ -115,6 +143,9 @@ const default_config = (params) => {
         break;
       case "info-pos-config":
         json_obj = {"account": 9, "bill_cycle": 12, "budget_billing": 4, "credit_ranking": 3, "first_name": 1, "last_invoice": 10, "last_payment": 11, "last_name": 2, "meter_type": 14, "next_cycle": 13, "outage_notif": 8, "pap": 5, "paperless": 6, "service": 7};
+        break;
+      case "xray-config":
+        json_obj = {"xray": false};
         break;
       default:
         break;
