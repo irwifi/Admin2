@@ -1083,7 +1083,7 @@
         .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu .sub-menu li > a {
           display: block;
           margin: 0;
-          padding: 6px 15px 6px 43px;
+          padding: 6px 15px 6px 24px;
           text-decoration: none;
           font-size: 14px;
           font-weight: 300;
@@ -1322,9 +1322,13 @@
 
   .page-sidebar-wrapper .info .fa-cog {
     cursor: pointer;
-    margin-left: 4px;
-    position: fixed;
-    bottom: 50px;
+    margin-left: 22px;
+    position: absolute;
+    bottom: -10px;
+  }
+
+  .page-sidebar-closed .page-sidebar .info .fa-cog {
+    display: none;
   }
 
   .page-sidebar-wrapper .info-modal ul {
@@ -1476,7 +1480,7 @@
         .page-sidebar-right .page-sidebar-menu .sub-menu li > a {
           display: block;
           margin: 0;
-          padding: 6px 15px 6px 43px;
+          padding: 6px 15px 6px 24px;
           text-decoration: none;
           font-size: 14px;
           font-weight: 300;

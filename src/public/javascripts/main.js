@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(function() {
+  // To clear the localStorage Cache
   // localStorage.clear();
 
   const config_info_pos = {"config_element": "info-pos-config",  "config_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "config_identifier": "data-config", "config_attribute": "data-pos", "element_parent": ".page-sidebar-wrapper .info .sub-menu", "element_selector": ".nav-item", "element_identifier": "data-pos"};
