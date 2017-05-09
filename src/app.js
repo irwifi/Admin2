@@ -5,9 +5,13 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const sessions = require("client-sessions");
+const validator = require('validator');
 
 const routes = require('./routes/index');
 const users = require('./routes/users');
+const authentication = require('./routes/authentication')( { express } );
+const authen = require('./routes/authen');
 
 const app = express();
 
@@ -23,6 +27,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Initialize session
+require("./helpers/hsession")( { app, sessions } );
+
+// User authentication
+app.use(authentication);
+app.use('/authen', authen);
 app.use('/', routes);
 app.use('/users', users);
 
