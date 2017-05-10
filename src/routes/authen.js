@@ -52,6 +52,7 @@ authen_router.post("/signup", (req, res) => {
 // route for "authen/signin", user sign in
 authen_router.post("/signin", (req, res) => {
 	const params = {res, req};
+
 	params.form_data = {
 		user_email : helper.sanitize_data({data: req.body.username}),
 		password : helper.sanitize_data({data: req.body.password, no_trim: true})
@@ -69,16 +70,15 @@ authen_router.post("/signin", (req, res) => {
 				muser.compare_user_password
 			], send_error_or_log_uer
 		);
-	} else {console.log(validate_errors);
+	} else {
 		send_back_authen_errors (null, {res, form: "signin", errors: validate_errors, form_data: params.form_data});
 	}
 });
 
 // route for "authen/lock"
 authen_router.get("/lock", (req, res) => {
-	req.authen.locked = true;
-	// res.redirect("authen/lock_screen");
-	res.render("lock_screen", {});
+	req.authen.status = "locked";
+	res.redirect("/authen/lock_screen");
 });
 
 // route for "authen/lock_screen"
@@ -501,6 +501,7 @@ const validate_retype_password = ( err, params ) => {
 // login the user: add user id to the authentication session
 const log_user_session = (err, params) => {
 	const req = params.req;
+	req.authen.status = true;
 	req.authen.user_id = params.user_info._id;
 	req.authen.user_name = params.user_info.username;
 	req.authen.user_email = params.user_info.user_email;

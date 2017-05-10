@@ -9,34 +9,22 @@ module.exports = ( params ) => {
 		// position of /authen in request url to check if it is the route for /authen
 		const authen_index = req.url.indexOf("/authen");
 
-		// check if user has logged in or not
-		if (req.authen !== undefined && req.authen.user_id !== undefined && req.authen.locked === undefined) {
-			// user has logged in
-			// checks if the request url begins with /authen; that is route for /authen
-			if(authen_index === 0 &&  !(["/authen/signout", "/authen/lock", "/authen/change_password"].includes(req.url))) {
-				// redirect the authentication page to home page if the user is already logged in
-				res.redirect("/");
-			} else {
-				next();
-			}
-		} else if (req.authen !== undefined && req.authen.locked === true) {
-			// user is locked
-			// checks if the request url begins with /authen; that is route for /authen
-			if(authen_index === 0 &&  !(["/authen/lock_screen"].includes(req.url))) {
-				next();
-			} else {
-				// res.redirect("/authen/lock_screen");
-				next();
-			}
-		} else	{
-			// user has not logged in
-			// checks if the request url begins with /authen; that is route for /authen
-			if(authen_index === 0) {
-				next();
-			} else {
-				// redirect to authentication page if user is not logged in
-				res.redirect('/authen');
-			}
+		const logged_authen = ["/authen/signout", "/authen/lock_screen", "/authen/lock", "/authen/change_password"];
+		const locked_authen = ["/authen/lock", "/authen/change_password"];
+		switch(req.authen.status) {
+			case undefined:
+			case false:
+				if(authen_index !== 0 || logged_authen.includes(req.url)) {res.redirect('/authen');}
+				else {next();}
+				break;
+			case "locked":
+				if(authen_index !== 0 || locked_authen.includes(req.url)) {res.redirect('/authen/lock_screen');}
+				else {next();}
+				break;
+			case true:
+				if(authen_index !== 0 || (logged_authen.includes(req.url) && req.url !== "/authen/lock_screen")) {next();}
+				else {res.redirect("/");}
+				break;
 		}
 	});
 
