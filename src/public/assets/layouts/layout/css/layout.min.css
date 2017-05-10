@@ -1312,6 +1312,11 @@
     clear: both;
   }
 
+  .page-sidebar-wrapper .info .last_invoice .right {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   .page-sidebar-wrapper .info .tooltips {
     text-decoration: underline;
   }

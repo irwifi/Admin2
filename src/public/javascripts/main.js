@@ -67,22 +67,15 @@ $(document).ready(function() {
 })
 
 const toggle_tooltips = () => {
-  let tooltip_number;
   if($(".page-sidebar-wrapper .xray-view input[type='checkbox'][name='xray']").is(':checked')) {
-    tooltip_number = "tooltip2";
+    $(".page-sidebar-wrapper .info .sub-menu .nav-item .title").removeClass("blank");
+    $(".page-sidebar-wrapper .info .sub-menu .nav-item .title.tooltips").each(function() {
+      $(this).attr("data-original-title", $(this).attr("data-tooltip"));
+    });
   } else {
-    tooltip_number = "tooltip1";
+    $(".page-sidebar-wrapper .info .sub-menu .nav-item .title").addClass("blank");
+    $(".page-sidebar-wrapper .info .sub-menu .nav-item .title.tooltips").attr("data-original-title", "");
   }
-
-  $(".page-sidebar-wrapper .info .sub-menu .nav-item .tooltips").each(function() {
-    if($(this).data(tooltip_number) == "") {
-      $(this).addClass("blank");
-    } else {
-      $(this).removeClass("blank");
-    }
-
-    $(this).attr("data-original-title", $(this).data(tooltip_number));
-  });
 }
 
 // Sort the Info elements
@@ -140,10 +133,10 @@ const default_config = (params) => {
     let json_obj;
     switch (config_element) {
       case "info-select-config":
-        json_obj = {"account": true, "bill_cycle": true, "budget_billing": true, "credit_ranking": true, "first_name": true, "last_invoice": true, "last_payment": true, "last_name": true, "meter_type": false, "next_cycle": true, "outage_notif": true, "pap": true, "paperless": true, "service": true};
+        json_obj = {"account": true, "bill_cycle": true, "budget_billing": true, "credit_ranking": true, "first_name": true, "last_invoice": true, "last_payment": true, "last_name": true, "meter_type": false, "next_cycle": true, "outage_notif": true, "pap": true, "paperless": true, "service_pwr": true, "service_wtr": true};
         break;
       case "info-pos-config":
-        json_obj = {"account": 9, "bill_cycle": 12, "budget_billing": 4, "credit_ranking": 3, "first_name": 1, "last_invoice": 10, "last_payment": 11, "last_name": 2, "meter_type": 14, "next_cycle": 13, "outage_notif": 8, "pap": 5, "paperless": 6, "service": 7};
+        json_obj = {"account": 10, "bill_cycle": 13, "budget_billing": 4, "credit_ranking": 3, "first_name": 1, "last_invoice": 11, "last_payment": 12, "last_name": 2, "meter_type": 15, "next_cycle": 14, "outage_notif": 9, "pap": 5, "paperless": 6, "service_pwr": 7, "service_wtr": 8};
         break;
       case "xray-config":
         json_obj = {"xray": false};

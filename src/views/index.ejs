@@ -10,7 +10,8 @@
     <div class="page-container">
       <%- include('left-col') -%>
       <%- include('right-col') -%>
-      <%- include('mid-col') -%>
+      <%# if(typeof page === 'undefined' )  {        page = "dashboard";      } %>
+      <%- include(page) -%>
     </div>
     <!-- END CONTAINER -->
 
