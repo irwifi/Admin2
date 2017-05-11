@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   const config_info_pos = {"config_element": "info-pos-config",  "config_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "config_identifier": "data-config", "config_attribute": "data-pos", "element_parent": ".page-sidebar-wrapper .info .sub-menu", "element_selector": ".nav-item", "element_identifier": "data-pos"};
   const config_info_select = {"config_element": "info-select-config", "config_selector": ".page-sidebar-wrapper .info-modal .mt-checkbox input[type='checkbox']", "config_identifier": "name", "config_property": "checked", "element_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "element_identifier": "data-config", "css_property": "display"};
-  const config_xray = {"config_element": "xray-config",  "config_selector": ".page-sidebar-wrapper .xray-view input[type='checkbox']", "config_identifier": "name", "config_property": "checked"};
+  const config_xray = {"config_element": "xray-config",  "config_selector": ".page-footer .xray-view input[type='checkbox']", "config_identifier": "name", "config_property": "checked"};
   const config_array = [config_info_pos, config_info_select, config_xray];
   load_all_config({config_array});
   // console.log(localStorage);
@@ -60,14 +60,14 @@ $(document).ready(function() {
     load_config({"config": config_info_select});
   });
 
-  $(".page-sidebar-wrapper .xray-view input[name='xray']").on("change", () => {
-    config_save({"config_element": "xray-config", "config_selector": ".page-sidebar-wrapper .xray-view input[type='checkbox']", "element_identifier": "name", "config_property": "checked"});
+  $(".page-footer .xray-view input[name='xray']").on("change", () => {
+    config_save({"config_element": "xray-config", "config_selector": ".page-footer .xray-view input[type='checkbox']", "element_identifier": "name", "config_property": "checked"});
     toggle_tooltips();
   });
 })
 
 const toggle_tooltips = () => {
-  if($(".page-sidebar-wrapper .xray-view input[type='checkbox'][name='xray']").is(':checked')) {
+  if($(".page-footer .xray-view input[type='checkbox'][name='xray']").is(':checked')) {
     $(".page-sidebar-wrapper .info .sub-menu .nav-item .title").removeClass("blank");
     $(".page-sidebar-wrapper .info .sub-menu .nav-item .title.tooltips").each(function() {
       $(this).attr("data-original-title", $(this).attr("data-tooltip"));
