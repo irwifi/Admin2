@@ -311,6 +311,11 @@
     padding: 0; }
     .page-boxed .page-header.navbar > .container {
       margin: auto !important; }
+
+
+    .quick-nav {
+      top: 120px;
+      margin-top: 0; }
 }
 
 

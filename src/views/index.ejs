@@ -9,13 +9,13 @@
     <!-- BEGIN CONTAINER -->
     <div class="page-container">
       <%- include('left-col') -%>
-      <%- include('right-col') -%>
-      <%# if(typeof page === 'undefined' )  {        page = "dashboard";      } %>
+      <%# if(typeof page === 'undefined' )  { page = "dashboard"; } %>
       <%- include(page) -%>
+      <%- include('right-col') -%>
     </div>
     <!-- END CONTAINER -->
 
-      <%- include('footer') -%>
+    <%- include('footer') -%>
   </div>
 
   <%- include('script') -%>

@@ -8,7 +8,6 @@
     width: 100%; }
     .page-content-wrapper .page-content {
       margin-left: 235px;
-      margin-right: 235px;
       margin-top: 0px;
       min-height: 600px;
       padding: 25px 20px 10px 20px; }
@@ -391,32 +390,4 @@
       .page-sidebar-closed.page-sidebar-hide .page-sidebar {
         display: none !important; }
   /* Left Sidebar ----------------------------------------*/
-
-/* Right Sidebar >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    .page-sidebar-reversed.page-sidebar-fixed .page-sidebar-wrapper-right {
-      position: relative;
-      float: right; }
-
-    .page-sidebar-right {
-      width: 235px;
-      float: left;
-      position: relative;
-      margin-right: -100%; }
-      .page-full-width .page-sidebar-right {
-        display: none !important; }
-      .page-sidebar-right.collapse {
-        display: block;
-        max-height: none !important; }
-    .page-sidebar-reversed .page-sidebar-right {
-      float: right;
-      margin-right: 0;
-      margin-left: -100%; }
-    .page-sidebar-reversed.page-sidebar-fixed .page-sidebar-right {
-      margin-left: -235px; }
-
-    .page-sidebar-fixed .page-sidebar-right {
-      position: fixed !important;
-      margin-left: 0;
-      top: 50px; }
-  /* Right Sidebar ----------------------------------------*/
 }
