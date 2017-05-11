@@ -7,6 +7,7 @@ $(document).ready(function() {
   const config_info_select = {"config_element": "info-select-config", "config_selector": ".page-sidebar-wrapper .info-modal .mt-checkbox input[type='checkbox']", "config_identifier": "name", "config_property": "checked", "element_selector": ".page-sidebar-wrapper .info .sub-menu .nav-item", "element_identifier": "data-config", "css_property": "display"};
   const config_xray = {"config_element": "xray-config",  "config_selector": ".page-footer .xray-view input[type='checkbox']", "config_identifier": "name", "config_property": "checked"};
   const config_array = [config_info_pos, config_info_select, config_xray];
+
   load_all_config({config_array});
   // console.log(localStorage);
 
@@ -50,21 +51,28 @@ $(document).ready(function() {
       };
     });
 
+    on_events({config_info_select});
+})
+
+const on_events = (params) => {
+  // Info configuration Save button CLICK
   $(".page-sidebar-wrapper .info-modal .save_button").on("click", () => {
     toastr.success('Info Selector Configuration Saved!');
     $(".page-sidebar-wrapper .info-modal .close").click();
     config_save({"config_element": "info-select-config", "config_selector": ".page-sidebar-wrapper .info-modal .mt-checkbox input[type='checkbox']", "element_identifier": "name", "config_property": "checked"});
   });
 
+  // Info configuration model HIDE
   $(".page-sidebar-wrapper .info-modal").on('hide', () => {
-    load_config({"config": config_info_select});
+    load_config({"config": params.config_info_select});
   });
 
+  // Xray view checkbox checked status CHANGE
   $(".page-footer .xray-view input[name='xray']").on("change", () => {
     config_save({"config_element": "xray-config", "config_selector": ".page-footer .xray-view input[type='checkbox']", "element_identifier": "name", "config_property": "checked"});
     toggle_tooltips();
   });
-})
+}
 
 const toggle_tooltips = () => {
   if($(".page-footer .xray-view input[type='checkbox'][name='xray']").is(':checked')) {

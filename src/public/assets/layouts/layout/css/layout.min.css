@@ -183,6 +183,28 @@
     margin-left: 0px !important; }
 
 
+
+.feature_panel {
+  float: right;
+  display: inline-block;
+  width: 240px;
+  margin-top: -14px;
+}
+
+.feature_panel i {
+  font-size: 17px;
+  cursor: pointer;
+  margin: 5px;
+  color: #b4bcc8;
+  height: 32px;
+  width: 36px;
+  padding: 10px;
+}
+
+.feature_panel i:hover {
+  background: #3f4f62;
+}
+
 /* Header >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
   .page-header.navbar {
     width: 100%;
