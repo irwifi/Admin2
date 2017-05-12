@@ -1096,10 +1096,6 @@
     display: none;
   }
 
-  .page-sidebar-wrapper .info-modal ul {
-    list-style: none;
-  }
-
   .page-sidebar-wrapper .page-sidebar .page-sidebar-menu > li.xray-view {
     position: fixed;
     bottom: 0;
@@ -1109,6 +1105,11 @@
     height: 40px;
     background: #2b3643;
     text-align: center;
+  }
+
+  .info .modal-toggler {
+    text-decoration: underline;
+    cursor: pointer;
   }
 /* Left Sidebar ----------------------------------------*/
 
@@ -1874,3 +1875,75 @@
     .page-container-bg-solid.page-sidebar-reversed.page-sidebar-closed .theme-panel {
       margin-right: 65px; }
 /* Theme Panel ----------------------------------------*/
+
+/* Info Modal >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+  .modal#info-modal ul {
+    list-style: none;
+  }
+
+  .modal .modal-footer i {
+    cursor: pointer;
+    font-size: 20px;
+    color: #707884;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+  }
+
+  .modal .modal-footer i:hover {
+    background: #CCC;
+  }
+
+  .modal .portlet {
+    color: #777;
+  }
+
+  .modal#credit-rank-modal .modal-dialog {
+    width: 1000px;
+  }
+
+  .modal#credit-rank-modal .score, .modal#credit-rank-modal .rating {
+    text-align: center;
+  }
+
+  .modal#credit-rank-modal .points {
+    font-size: 88px;
+    line-height: 180px;
+    display: block;
+    font-weight: bold;
+    height: 200px;
+  }
+
+ .modal#credit-rank-modal .knob {
+    font-size: 65px !important;
+  }
+
+  .modal#credit-rank-modal .portlet-title.score_percentile {
+    margin-top: 20px;
+   }
+
+  .modal#credit-rank-modal .percentile {
+    margin-top: -20px;
+  }
+
+  .modal#credit-rank-modal .range {
+    margin-top: -20px;
+  }
+
+  .modal#credit-rank-modal .min_range {
+    float: left;
+  }
+
+  .modal#credit-rank-modal .max_range {
+    float: right;
+  }
+
+  .modal#credit-rank-modal #history_chart {
+    width: 100%;
+    height: 300px;
+  }
+
+  .modal#credit-rank-modal .progress {
+    height: 20px;
+  }
+/* Info Modal ----------------------------------------*/

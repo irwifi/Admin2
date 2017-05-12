@@ -1,7 +1,7 @@
 var UIModals = function () {
 
     var handleModals = function () {
-        $("#draggable").draggable({
+        $(".draggable").draggable({
             handle: ".modal-header"
         });
     }
@@ -16,6 +16,6 @@ var UIModals = function () {
 
 }();
 
-jQuery(document).ready(function() {    
+jQuery(document).ready(function() {
    UIModals.init();
 });
